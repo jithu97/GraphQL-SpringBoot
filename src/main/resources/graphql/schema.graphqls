@@ -1,0 +1,23 @@
+type  Actor {
+    id: ID!,
+    name : String,
+    language : Language
+}
+
+enum Language {
+         Telugu,
+         Tamil,
+         Malayalam,
+         Kannada
+}
+
+type Query {
+    findAll: [Actor]
+    findOne(id: ID): Actor
+}
+
+type Mutation {
+    create(name : String, language : Language): Actor
+    delete(id : ID): Actor
+    update(name : String, language : Language, id : ID) : Actor
+}
